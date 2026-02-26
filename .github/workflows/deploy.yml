@@ -1,0 +1,42 @@
+name: Deploy API to GitHub Pages
+
+# Die Action startet automatisch, wenn etwas in den "main" Branch gepusht wird
+on:
+  push:
+    branches: ["main"]
+  # Erlaubt es dir, die Action auch manuell im GitHub-Menü zu starten
+  workflow_dispatch:
+
+# Gibt GitHub die nötigen Rechte, um die Dateien als Website zu veröffentlichen
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v4
+        with:
+          enablement: true
+        
+      - name: Upload Files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # Lädt alle Dateien aus dem Repo hoch (also deine team.json)
+          
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
