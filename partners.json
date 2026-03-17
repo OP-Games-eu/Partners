@@ -10,5 +10,17 @@
     "website_url": "https://teaclient.com",
     "description": "Ein leistungsstarker Minecraft-Client mit vielen Funktionen.",
     "partnered_since": "2025-11-05"
+  },
+  {
+    "name": "CraftingStudioPro",
+    "logo": "https://api.craftingstudiopro.de/v1/upload/avatars/logo.png",
+    "bannerUrl": "https://api.craftingstudiopro.de/v1/upload/avatars/banner.png",
+    "discord_name": "dergmaer09",
+    "discord_id": "1033714515377934386",
+    "server_id": "1414684170260840521",
+    "invite_url": " https://discord.gg/TDbbnjkfVZ",
+    "website_url": "https://craftingstudiopro.de",
+    "description": "Hochwertige Ressourcen, Echtzeit-Analysen und Entwicklertools. Entwickelt für Serverbetreiber, die keine Kompromisse eingehen.",
+    "partnered_since": "2025-10-15"
   }
 ]
